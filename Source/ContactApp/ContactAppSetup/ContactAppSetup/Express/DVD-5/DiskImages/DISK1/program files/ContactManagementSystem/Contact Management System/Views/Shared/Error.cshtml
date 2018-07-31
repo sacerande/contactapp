@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <h4>
+        Sorry, an error occurred while processing your request.
+    </h4>
+
+    <h5>
+    Error Message: @ViewBag.error
+    </h5>
+
+    @Html.ActionLink("Navigate to Home Page","Index", "Contact", null, new { Class = "btn btn-default" })
+</body>
+</html>
