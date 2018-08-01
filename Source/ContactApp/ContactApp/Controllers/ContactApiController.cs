@@ -10,7 +10,6 @@ namespace ContactApp.Controllers
 {
     public class ContactApiController : ApiController
     {
-        //static readonly IContactRepository repository = new ContactRepository();
         private IContactRepository repository;
         public ContactApiController(IContactRepository repository)
         {
@@ -32,7 +31,7 @@ namespace ContactApp.Controllers
 
         public HttpResponseMessage Post(Contact item)
         {
-            //check repository validation for update.
+            //check repository validation for Add.
             String validationError = repository.ValidateAdd(item);
             if (validationError != null) { ContactUtil.ThrowHttpResponseException(validationError, HttpStatusCode.BadRequest, "Add validation failed"); }
 
